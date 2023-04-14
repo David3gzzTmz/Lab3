@@ -1,1 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Sitio de Tutoriales</title>
+
+<link rel="stylesheet" type=text/css href="styles.css">
+
+<meta charset="UFT-8">
+</head>
+<body style="background-color: #Aff4f2; background-attachment: fixed;  ";>
+
+<h5 > David Tresgonzález Tamez</h5>
+<div class=contenedor>
+    <h1 >Tutorial</h1>
+
+    <div class="topnav">
+        <div class="menun">
+            <ul id="menu2">
+                <li><a href="index.html">Video del Tutorial</a></li>
+                <li><a href="generadorjson.html"> Generador JSON de componentes</a> </li>
+                <li><a href="codigoino.html"> Código original </a> </li>
+                <li><a href="index.html">volver a plantillas de labs</a> </li>
+              </ul>
+
+        </div>
+        <sp> <a href="https://www.instagram.com/david3gonzaleztmz/"  target="_blank"> 
+Instagram  </a>  </sp>
+
+    </div>
+    
+<h3> Generador de JSON</h3>
+    <h4>Requisitos</h4>
+
+    <P>
+        Este código generar el dispositivo en los contactos en wokwi.
+    </P>  
+    <h4>Código</h4>
+    <P style="color:darkgreen">
+        {
+            "version": 1,
+            "author": "Anonymous maker",
+            "editor": "wokwi",<br>
+            "parts": [
+            <br>
+              { "type": "wokwi-pi-pico", "id": "pico", "top": -155.83, "left": -94.28, "attrs": {} },
+              { "type": "wokwi-7segment", "id": "sevseg1", "top": 25.25, "left": 115.22, "attrs": {} },
+              {
+                "type": "wokwi-resistor",
+                "id": "r1",
+                "top": 85.55,
+                "left": 47.46,
+                "attrs": { "value": "1000" }
+              },
+              <br>
+              {
+                "type": "wokwi-resistor",
+                "id": "r2",
+                "top": 92.49,
+                "left": 172.4,
+                "attrs": { "value": "1000" }
+              },
+              <br>
+              {
+                "type": "wokwi-resistor",
+                "id": "r3",
+                "top": 118.49,
+                "left": 69.06,
+                "attrs": { "value": "1000" }
+              },
+              <br>
+              {
+                "type": "wokwi-resistor",
+                "id": "r4",
+                "top": 119.15,
+                "left": 150.41,
+                "attrs": { "value": "1000" }
+              },
+              <br>
+              {
+                "type": "wokwi-resistor",
+                "id": "r5",
+                "top": -11.65,
+                "left": 66.13,
+                "attrs": { "value": "1000" }
+              },
+              <br>
+              {
+                "type": "wokwi-resistor",
+                "id": "r6",
+                "top": -11.65,
+                "left": 166.13,
+                "attrs": { "value": "1000" }
+              },
+              <br>
+              {
+                "type": "wokwi-resistor",
+                "id": "r7",
+                "top": 9.68,
+                "left": 55.47,
+                "attrs": { "value": "1000" }
+              },
+              <br>
+              {
+                "type": "wokwi-resistor",
+                "id": "r8",
+                "top": 8.08,
+                "left": 171.47,
+                "attrs": { "value": "1000" }
+              }
+            ],
+            <br>
+            "connections": [
+              [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+              [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+              [ "r7:2", "sevseg1:G", "green", [ "v0" ] ],
+              [ "sevseg1:F", "r5:2", "green", [ "v0" ] ],
+              [ "sevseg1:A", "r6:1", "green", [ "v0" ] ],
+              [ "sevseg1:B", "r8:1", "green", [ "v0" ] ],
+              [ "r2:1", "sevseg1:DP", "green", [ "v0" ] ],
+              [ "r4:1", "sevseg1:C", "green", [ "v0" ] ],
+              [ "r1:2", "sevseg1:E", "green", [ "v0" ] ],
+              [ "r3:2", "sevseg1:D", "green", [ "v0" ] ],
+              [ "pico:GP17", "r6:2", "green", [ "h23.86", "v-63.74", "h223.35" ] ],
+              [ "pico:GP16", "r8:2", "green", [ "v0.85", "h33.89", "v-99.25", "h209.53" ] ],
+              [ "pico:GP19", "r7:1", "green", [ "h0" ] ],
+              [ "pico:GP18", "r5:1", "green", [ "h56.95", "v-20.48" ] ],
+              [ "pico:GP13", "r4:2", "green", [ "h-38.47", "v145.95", "h359.92" ] ],
+              [ "r3:1", "pico:GP15", "green", [ "v-0.76", "h-165.73" ] ],
+              [ "r1:1", "pico:GP14", "green", [ "v1.1", "h-153.15", "v-63.16" ] ],
+              [ "r2:2", "pico:GP12", "green", [ "v75.37", "h-371.98", "v-169.43" ] ],
+              [ "pico:VSYS", "sevseg1:COM.2", "green", [ "h0" ] ]
+            ],
+            <br>
+            "dependencies": {}
+          }
+    </P>   
+   
+
+    <h5> Información laboral</h5>
+     
+    <a style="text-align:center;" href="https://mx.linkedin.com/in/david-tresgonz%C3%A1lez-tamez-7b5369181"  target="_blank"> Aquí esta la liga de mi Linkedin</a>
+    </div>
+<h5> Favor de no usar sin autorización.</h5>
+</body>
+
+</html>
 
