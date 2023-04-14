@@ -1,1 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Sitio de Tutoriales</title>
+
+<link rel="stylesheet" type=text/css href="styles.css">
+
+<meta charset="UFT-8">
+</head>
+<body style="background-color: #Aff4f2; background-attachment: fixed;  ";>
+
+<h5 > David Tresgonzález Tamez</h5>
+<div class=contenedor>
+    <h1 >Tutorial</h1>
+
+    <div class="topnav">
+        <div class="menun">
+            <ul id="menu2">
+                <li><a href="index.html">Video del Tutorial</a></li>
+                <li><a href="generadorjson.html"> Generador JSON de componentes</a> </li>
+                <li><a href="codigoino.html"> Código original </a> </li>
+                <li><a href="index.html">volver a plantillas de labs</a> </li>
+              </ul>
+
+        </div>
+        <sp> <a href="https://www.instagram.com/david3gonzaleztmz/"  target="_blank"> 
+Instagram  </a>  </sp>
+
+    </div>
+    
+<h3> Codigo del Generador de Numeros </h3>
+    <h4>Acerca del código</h4>
+    <P>
+        Este programa tiene una sintaxis muy similar a la de C/C++;
+        El programa utiliza las librerias de <a style="color:darkorange">  stdio.h </a> y  <a style="color:darkorange">   hardware/gpio.h </a>
+        También es preferible hacer las funciones voids.
+
+    </P>  
+    <br>
+    <h4>Pasos</h4>
+    <P>
+        <ol type=”A” , style="text-align:left;color:darkcyan">
+            <li>Incluye librerias</li>
+            <li> Define las variables </li>
+            <li> Programa el setup de los pines utilizando <a style="color:darkorange">  _gpio_init </a> y  <a style="color:darkorange">   gpio_set_dir </a> </li>
+            <li> Crea los voids para definir presequencias de segmentos</li>
+            <li> Programa la sequencia en el void loop</li>
+          </ol>
+
+    </P>  
+
+    <h4>Código</h4>
+    <p style="color:darkgreen">
+        #include <stdio.h>
+            #include "hardware/gpio.h"
+            
+            <br>
+            #define LEDA 17 <br>
+            #define LEDB 16 <br>
+            #define LEDC 13 <br>
+            #define LEDD 15 <br>
+            #define LEDE 14 <br>
+            #define LEDF 18 <br>
+            #define LEDG 19 <br>
+            #define LEDP 12 <br>
+            
+            <br>
+            void setup() {
+              // put your setup code here, to run once:
+              Serial1.begin(115200);
+              Serial1.println("Hello, Raspberry Pi Pico!");
+              <br>
+              _gpio_init(LEDA);
+              gpio_set_dir(LEDA, GPIO_OUT);
+              _gpio_init(LEDB);
+              gpio_set_dir(LEDB, GPIO_OUT);
+              _gpio_init(LEDC);
+              gpio_set_dir(LEDC, GPIO_OUT);
+              _gpio_init(LEDD);
+              gpio_set_dir(LEDD, GPIO_OUT);
+              _gpio_init(LEDE);
+              gpio_set_dir(LEDE, GPIO_OUT);
+              _gpio_init(LEDF);
+              gpio_set_dir(LEDF, GPIO_OUT);
+              _gpio_init(LEDG);
+              gpio_set_dir(LEDG, GPIO_OUT);
+              _gpio_init(LEDP);
+            }
+            <br>
+            <br>
+            
+            void N8(int) {
+            gpio_put(LEDC,0);
+            gpio_put(LEDB,0);
+            gpio_put(LEDA,0);
+            gpio_put(LEDD,0);
+            gpio_put(LEDE,0);
+            gpio_put(LEDF,0);
+            gpio_put(LEDG,0);
+            }
+            <br>
+            void N1(int) {
+            gpio_put(LEDB,0);
+            gpio_put(LEDA,1);
+            gpio_put(LEDD,1);
+            gpio_put(LEDE,1);
+            gpio_put(LEDF,1);
+            gpio_put(LEDG,1);
+            }
+            <br>
+            void N23E(int) {
+            gpio_put(LEDA,0);
+            gpio_put(LEDD,0);
+            gpio_put(LEDG,0);
+            }
+            <br>
+            <br>
+            void loop() {
+            N8(1);
+            gpio_put(LEDG,1);
+            delay(1000);
+            <br>
+            N1(1);
+            delay(1000);
+            <br>
+            N23E(1);
+            gpio_put(LEDE,0);
+            gpio_put(LEDC,1);
+            delay(1000);<br>
+            gpio_put(LEDE,1);
+            gpio_put(LEDC,0);
+            delay(1000);<br>
+            gpio_put(LEDD,1);
+            gpio_put(LEDA,1);
+            gpio_put(LEDF,0);
+            delay(1000);<br>
+            gpio_put(LEDD,1);
+            gpio_put(LEDA,1);
+            gpio_put(LEDF,0);
+            delay(1000);<br>
+            gpio_put(LEDD,0);
+            gpio_put(LEDA,0);
+            gpio_put(LEDB,1);
+            delay(1000);<br>
+            gpio_put(LEDE,0);
+            delay(1000);<br>
+            N1(1);
+            gpio_put(LEDA,0);
+            delay(1000);<br>
+            N8(1);
+            delay(1000);<br>
+            gpio_put(LEDE,1);
+            delay(1000);<br>
+            gpio_put(LEDE,0);
+            gpio_put(LEDD,1);
+            delay(1000);<br>
+            gpio_put(LEDA,1);
+            gpio_put(LEDB,1);
+            gpio_put(LEDD,0);
+            delay(1000);<br>
+            gpio_put(LEDA,1);
+            gpio_put(LEDB,1);
+            gpio_put(LEDD,0);
+            delay(1000);<br>
+            gpio_put(LEDG,1);
+            gpio_put(LEDC,1);
+            gpio_put(LEDA,0);
+            delay(1000);<br>
+            gpio_put(LEDA,1);
+            gpio_put(LEDF,1);
+            gpio_put(LEDC,0);
+            gpio_put(LEDB,0);
+            gpio_put(LEDG,0);
+            delay(1000);<br>
+            gpio_put(LEDA,0);
+            gpio_put(LEDB,1);
+            gpio_put(LEDF,0);
+            gpio_put(LEDC,1);
+            delay(1000);<br>
+            gpio_put(LEDD,1);
+            delay(1000);<br>
+            }
+            
+    </p>
+
+    
+    <h5> Información laboral</h5>
+     
+    <a style="text-align:center;" href="https://mx.linkedin.com/in/david-tresgonz%C3%A1lez-tamez-7b5369181"  target="_blank"> Aquí esta la liga de mi Linkedin</a>
+    </div>
+<h5> Favor de no usar sin autorización.</h5>
+</body>
+
+</html>
 
